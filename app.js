@@ -258,7 +258,7 @@ bot.on("message", (message) => {
 
     switch(args[0]){
         case "hier":
-        if(message.author.id == "311955689188753410"){
+        if(message.author.id == "293718922371399681"){
             derKanal = message.channel;
         }else{
             message.reply("you are not authorized to use this command");
