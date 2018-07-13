@@ -22,6 +22,7 @@ bot.login(process.env.BOT_TOKEN);
 bot.on("ready", () => {
 //    durchschnittspunkte();
     bot.user.setActivity("°v°");
+    derKanal = bot.channels.get("310892763417673729");
 });
 
 //var board = new five.Board(
