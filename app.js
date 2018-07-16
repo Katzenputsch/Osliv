@@ -269,8 +269,8 @@ bot.on("message", (message) => {
         if(message.guild === null){
             message.reply("this command sir, doesnt work in DM since i cant check your roles!");
         }else{
-            if(message.member.roles.find("name", "Moderators")){
-                //ist Mod
+            if(message.member.roles.find("name", "Teamball.io Player")){
+                //ist Teamball Player
                 if(args[1]){
                     if(args[1].length != 36){
                         message.reply("incorrect guid format");
@@ -283,8 +283,8 @@ bot.on("message", (message) => {
                     message.reply("correct use: >wanted <player guid>");
                 }
             }else{
-                //ist nicht Mod
-                message.reply("this is a command for Teamball.io moderators only");
+                //ist nicht Teamball Player
+                message.reply("this is a command for Teamball.io players only");
             }
         }
         break;
