@@ -266,10 +266,10 @@ bot.on("message", (message) => {
         }
         break;
         case "wanted":
-//         if(message.guild === null){
-//             message.reply("this command sir, doesnt work in DM since i cant check your roles!");
-//         }else{
-//             if(message.member.roles.find("name", "Moderators")){
+        if(message.guild === null){
+            message.reply("this command sir, doesnt work in DM since i cant check your roles!");
+        }else{
+            if(message.member.roles.find("name", "Moderators")){
                 //ist Mod
                 if(args[1]){
                     if(args[1].length != 36){
@@ -282,11 +282,11 @@ bot.on("message", (message) => {
                 }else{
                     message.reply("correct use: >wanted <player guid>");
                 }
-//             }else{
-//                 //ist nicht Mod
-//                 message.reply("this is a command for Teamball.io moderators only");
-//             }
-//         }
+            }else{
+                //ist nicht Mod
+                message.reply("this is a command for Teamball.io moderators only");
+            }
+        }
         break;
             
 //        case "temp":
