@@ -12,6 +12,7 @@ var nichtMehrWarnen = [];
 var derKanal;
 var suchende = [];
 var suchSpieler = [];
+var nachrichten = [];
 
 //var five = require("johnny-five");
 
@@ -247,6 +248,9 @@ function checkForSusp(){
 }
 
 bot.on("message", (message) => {
+    if(message.channel == "310892763417673729"){
+        nachrichten.push(message.content);
+    }
     if(message.author.equals(bot.user)) return;
     if(!message.content.startsWith(PREFIX)) return;
 
@@ -258,6 +262,15 @@ bot.on("message", (message) => {
     });
 
     switch(args[0]){
+        case "senden":
+            var nachricht;
+            if(args.length > 1){
+                for(i=0;i<args.length;i++){
+                    nachricht += args[i] + " ";
+                }
+            }
+            message.reply(nachricht);
+        break;
         case "hier":
         if(message.author.id == "293718922371399681" || message.author.id == "311955689188753410"){
             derKanal = message.channel;
