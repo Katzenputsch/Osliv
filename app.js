@@ -263,6 +263,9 @@ bot.on("message", (message) => {
     });
 
     switch(args[0]){
+        case "lesen":
+            message.reply(nachrichten);
+        break;
         case "senden":
             var nachricht = "";
             if(args.length > 1){
