@@ -249,8 +249,8 @@ function checkForSusp(){
 
 bot.on("message", (message) => {
     if(message.channel.id == "310892763417673729"){
-        nachrichten.push(message.content);
-        console.log(message.content)
+        nachrichten.push(message.author.username + " | " + message.content);
+        console.log(message.author.username + " | " + message.content);
     }
     if(message.author.equals(bot.user)) return;
     if(!message.content.startsWith(PREFIX)) return;
