@@ -265,7 +265,7 @@ bot.on("message", (message) => {
         case "senden":
             var nachricht;
             if(args.length > 1){
-                for(i=0;i<args.length;i++){
+                for(i=1;i<args.length;i++){
                     nachricht += args[i] + " ";
                 }
             }
