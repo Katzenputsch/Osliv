@@ -250,6 +250,7 @@ function checkForSusp(){
 bot.on("message", (message) => {
     if(message.channel.id == "310892763417673729"){
         nachrichten.push(message.content);
+        console.log(message.content)
     }
     if(message.author.equals(bot.user)) return;
     if(!message.content.startsWith(PREFIX)) return;
@@ -269,7 +270,7 @@ bot.on("message", (message) => {
                     nachricht += args[i] + " ";
                 }
             }
-            message.reply(nachricht);
+            bot.channels.get('310892763417673729').sendMessage(nachricht);
         break;
         case "hier":
         if(message.author.id == "293718922371399681" || message.author.id == "311955689188753410"){
