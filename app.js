@@ -24,6 +24,7 @@ bot.on("ready", () => {
 //    durchschnittspunkte();
     bot.user.setActivity("°v°");
     derKanal = bot.channels.get("310892763417673729");
+    derKanal.send("Bot crashed or was restarted. Suspicious matches might repeat, check _**Match ID's**_ to determine wether match was already reported here.");
 });
 
 //var board = new five.Board(
@@ -189,7 +190,7 @@ function checkForSusp(){
                     
                     var blamenge1 = euServer.matches[i].goals[0].length + euServer.matches[i].goals[1].length;
                     
-                    derKanal.send("`suspicious 1v1 match` detected on `EU` server between \"`" + euServer.matches[i].players[0].userName + "`\" guid: `" + euServer.matches[i].players[0].guid + "` and \"`" + euServer.matches[i].players[1].userName + "`\" guid: `" + euServer.matches[i].players[1].guid + "` | `" + blamenge1 + "` goals counted.");
+                    derKanal.send("`suspicious 1v1 match` detected on `EU` server between \"`" + euServer.matches[i].players[0].userName + "`\" guid: `" + euServer.matches[i].players[0].guid + "` and \"`" + euServer.matches[i].players[1].userName + "`\" guid: `" + euServer.matches[i].players[1].guid + "` | `" + blamenge1 + "` goals counted. **Match ID:** `" + euServer.matches[i]._id + "`");
                 }
             }
 
@@ -218,7 +219,7 @@ function checkForSusp(){
                     
                     nichtMehrWarnen.push(euServer.matches[i]._id);
                     
-                    derKanal.send("1v1 `0-0 win` detected on `EU` server. Players: \"`" + euServer.matches[i].players[0].userName + "`\" guid: `" + euServer.matches[i].players[0].guid + "` and \"`" + euServer.matches[i].players[1].userName + "`\" guid: `" + euServer.matches[i].players[1].guid + "`");
+                    derKanal.send("1v1 `0-0 win` detected on `EU` server. Players: \"`" + euServer.matches[i].players[0].userName + "`\" guid: `" + euServer.matches[i].players[0].guid + "` and \"`" + euServer.matches[i].players[1].userName + "`\" guid: `" + euServer.matches[i].players[1].guid + "` **Match ID:** `" + euServer.matches[i]._id + "`");
                 }
             }
         }
