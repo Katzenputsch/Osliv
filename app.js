@@ -13,7 +13,6 @@ var derKanal;
 var suchende = [];
 var suchSpieler = [];
 var nachrichten = [];
-var derKanal2;
 
 //var five = require("johnny-five");
 
