@@ -26,7 +26,7 @@ bot.on("ready", () => {
     bot.user.setActivity("°v°");
     derKanal = bot.channels.get("310892763417673729");
     derKanal.send("Bot crashed or was restarted. Suspicious matches might repeat, check _**Match ID's**_ to determine wether match was already reported here.");
-    derKanal2 = bot.channels.find("name","staff");
+    //derKanal2 = bot.channels.find("name","staff");
 });
 
 //var board = new five.Board(
@@ -254,8 +254,6 @@ bot.on("message", (message) => {
     if(message.channel.id == "310892763417673729"){
         nachrichten.push(message.author.username + " | " + message.content);
         console.log(message.author.username + " | " + message.content);
-    }else if(message.channel == derKanal2){
-        console.log("staff | " + message.author.username + ": " + message.content);
     }
     if(message.author.equals(bot.user)) return;
     if(!message.content.startsWith(PREFIX)) return;
