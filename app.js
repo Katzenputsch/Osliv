@@ -94,7 +94,7 @@ setInterval(function(){
     });
 }, 60000);
 
-var avg;
+var aveg;
 var cooldown = 0;
 
 var parseHtml = function(html){
@@ -119,10 +119,10 @@ var parseHtml = function(html){
         wieviele += 1;
     }
     
-    avg = gesamt / wieviele;
+    aveg = gesamt / wieviele;
     
     if(cooldown == 0){
-        bot.user.setActivity("Avg. score on EU : " + avg);
+        bot.user.setActivity('Avg. score on EU: ' + aveg, { type: 'WATCHING' });
         cooldown = 3;
     }else{
         cooldown -= 1;
