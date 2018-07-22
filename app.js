@@ -13,6 +13,7 @@ var derKanal;
 var suchende = [];
 var suchSpieler = [];
 var nachrichten = [];
+var gesamtSpieler = 0;
 
 //var five = require("johnny-five");
 
@@ -23,7 +24,7 @@ bot.login(process.env.BOT_TOKEN);
 bot.on("ready", () => {
 //    durchschnittspunkte();
     setInterval(function(){
-        bot.user.setActivity('Avg. score on EU: ' + avegINT);
+        bot.user.setActivity('Avg. score EU: ' + avegINT + "|Online:" + gesamtSpieler);
     }, 180000);
     derKanal = bot.channels.get("310892763417673729");
     derKanal.send("Bot crashed or was restarted. Suspicious matches might repeat, check _**Match ID's**_ to determine wether match was already reported here.");
@@ -112,6 +113,8 @@ var parseHtml = function(html){
     checkForSusp();
     checkForWanted();
     dingsbums();
+    
+    gesamtSpieler = euServer.playerNum;
 }
 
 var avegINT = 0;
