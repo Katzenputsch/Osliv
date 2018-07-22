@@ -94,6 +94,9 @@ setInterval(function(){
     });
 }, 60000);
 
+var avg;
+var cooldown = 0;
+
 var parseHtml = function(html){
     obj = JSON.parse(html);
 
@@ -107,6 +110,23 @@ var parseHtml = function(html){
     // }
     checkForSusp();
     checkForWanted();
+    
+    var gesamt = 0;
+    var wieviele = 0;
+    
+    for(i=0;i<euServer.players.length;i++){
+        gesamt += euServer.players[i].score;
+        wieviele += 1;
+    }
+    
+    avg = gesamt / wieviele;
+    
+    if(cooldown == 0){
+        bot.user.setActivity("Avg. score of current online: " + avg);
+        cooldown = 3;
+    }else{
+        cooldown -= 1;
+    }
 }
 
 //function durchschnittspunkte(){
