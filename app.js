@@ -24,7 +24,7 @@ bot.login(process.env.BOT_TOKEN);
 bot.on("ready", () => {
 //    durchschnittspunkte();
     setInterval(function(){
-        bot.user.setActivity("EU: online:" + gesamtSpieler + "|Avg. score:" + avegINT);
+        bot.user.setActivity("EU: online: " + gesamtSpieler + "→ Ø score: " + avegINT);
     }, 180000);
     derKanal = bot.channels.get("310892763417673729");
     derKanal.send("Bot crashed or was restarted. Suspicious matches might repeat, check _**Match ID's**_ to determine wether match was already reported here.");
