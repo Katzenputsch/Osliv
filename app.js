@@ -22,7 +22,7 @@ bot.login(process.env.BOT_TOKEN);
 
 bot.on("ready", () => {
 //    durchschnittspunkte();
-    bot.user.setActivity("°v°");
+    //bot.user.setActivity("°v°");
     derKanal = bot.channels.get("310892763417673729");
     derKanal.send("Bot crashed or was restarted. Suspicious matches might repeat, check _**Match ID's**_ to determine wether match was already reported here.");
     //derKanal2 = bot.channels.find("name","staff");
@@ -122,7 +122,7 @@ var parseHtml = function(html){
     avg = gesamt / wieviele;
     
     if(cooldown == 0){
-        bot.user.setActivity("Avg. score of current online: " + avg);
+        bot.user.setActivity("Avg. score on EU : " + avg);
         cooldown = 3;
     }else{
         cooldown -= 1;
