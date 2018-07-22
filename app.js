@@ -22,7 +22,9 @@ bot.login(process.env.BOT_TOKEN);
 
 bot.on("ready", () => {
 //    durchschnittspunkte();
-    //bot.user.setActivity("°v°");
+    setInterval(function(){
+        bot.user.setActivity('Avg. score on EU: ' + avegINT);
+    }, 180000);
     derKanal = bot.channels.get("310892763417673729");
     derKanal.send("Bot crashed or was restarted. Suspicious matches might repeat, check _**Match ID's**_ to determine wether match was already reported here.");
     //derKanal2 = bot.channels.find("name","staff");
@@ -112,9 +114,10 @@ var parseHtml = function(html){
     dingsbums();
 }
 
+var avegINT = 0;
+
 function dingsbums(){
     var aveg = 0;
-    var avegINT = 0;
     var gesamt = 0;
     var wieviele = 0;
     
@@ -125,13 +128,6 @@ function dingsbums(){
     
     aveg = (gesamt/wieviele);
     avegINT = Math.round(aveg);
-    
-    if(cooldown == 0){
-        bot.user.setActivity('Avg. score on EU: ' + avegINT);
-        cooldown = 3;
-    }else{
-        cooldown -= 1;
-    }
 }
 
 //function durchschnittspunkte(){
