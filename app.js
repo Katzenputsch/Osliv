@@ -109,7 +109,10 @@ var parseHtml = function(html){
     // }
     checkForSusp();
     checkForWanted();
-    
+    dingsbums();
+}
+
+function dingsbums(){
     var aveg = 0;
     var avegINT = 0;
     var gesamt = 0;
