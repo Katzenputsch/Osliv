@@ -94,8 +94,6 @@ setInterval(function(){
     });
 }, 60000);
 
-var aveg;
-var avegINT;
 var cooldown = 0;
 
 var parseHtml = function(html){
@@ -112,6 +110,8 @@ var parseHtml = function(html){
     checkForSusp();
     checkForWanted();
     
+    var aveg = 0;
+    var avegINT = 0;
     var gesamt = 0;
     var wieviele = 0;
     
@@ -120,7 +120,7 @@ var parseHtml = function(html){
         wieviele += 1;
     }
     
-    aveg = (gesamt / wieviele);
+    aveg = (gesamt/wieviele);
     avegINT = Math.round(aveg);
     
     if(cooldown == 0){
