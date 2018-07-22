@@ -95,6 +95,7 @@ setInterval(function(){
 }, 60000);
 
 var aveg;
+var avegINT;
 var cooldown = 0;
 
 var parseHtml = function(html){
@@ -119,10 +120,11 @@ var parseHtml = function(html){
         wieviele += 1;
     }
     
-    aveg = gesamt / wieviele;
+    aveg = (gesamt / wieviele);
+    avegINT = Math.round(aveg);
     
     if(cooldown == 0){
-        bot.user.setActivity('Avg. score on EU: ' + aveg, { type: 'WATCHING' });
+        bot.user.setActivity('Avg. score on EU: ' + avegINT);
         cooldown = 3;
     }else{
         cooldown -= 1;
