@@ -139,7 +139,7 @@ function dingsbums(){
             matchesLost: euServer.players[i].matchesLost,
             draws: euServer.players[i].draws,
             score: euServer.players[i].score,
-            gewonnenP: Math.round((euServer.players[i].matchesWon/euServer.players[i].matches)*100);
+            gewonnenP: Math.round((euServer.players[i].matchesWon/euServer.players[i].matches)*100)
         }
         euSpieler.push(player);
     }
