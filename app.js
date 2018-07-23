@@ -124,6 +124,41 @@ var parseHtml = function(html){
 
 var avegINT = 0;
 
+function welcherRank(rank){
+    switch(rank){
+        case 1:
+            return "Noob";
+        break;
+        case 2:
+            return "Rookie";
+        break;
+        case 3:
+            return "Amateur";
+        break;
+        case 4:
+            return "Semi Pro";
+        break;
+        case 5:
+            return "Pro";
+        break;
+        case 6:
+            return "Master";
+        break;
+        case 7:
+            return "Master Chief";
+        break;
+        case 8:
+            return "Elite";
+        break;
+        case 9:
+            return "World Class";
+        break;
+        case 10:
+            return "Elite";
+        break;
+    }
+}
+
 function dingsbums(){
     var aveg = 0;
     var gesamt = 0;
@@ -140,7 +175,8 @@ function dingsbums(){
             draws: euServer.players[i].draws,
             score: euServer.players[i].score,
             gewonnenP: Math.round((euServer.players[i].matchesWon/euServer.players[i].matches)*100),
-            country: euServer.players[i].country
+            country: euServer.players[i].country,
+            rank: welcherRank(euServer.players[i].rank)
         }
         euSpieler.push(player);
     }
@@ -326,9 +362,9 @@ bot.on("message", (message) => {
                     console.log(message.author.username);
                     for(i=0;i<euSpieler.length;i++){
                         if(i < 1){
-                            message.channel.send(":crown: :flag_" + euSpieler[i].country + ":  **Username: " + euSpieler[i].userName + "**" + " `Score: " + euSpieler[i].score + "` __Wins : " + euSpieler[i].gewonnenP + " %__");
+                            message.channel.send(":crown: :flag_" + euSpieler[i].country + ":  **Username: " + euSpieler[i].userName + "**" + " `Score: " + euSpieler[i].score + "` __Wins : " + euSpieler[i].gewonnenP + " %__ **" + euSpieler[i].rank + "**");
                         }else{
-                            message.channel.send(":flag_" + euSpieler[i].country + ": **Username: " + euSpieler[i].userName + "**" + " `Score: " + euSpieler[i].score + "` __Wins : " + euSpieler[i].gewonnenP + " %__");
+                            message.channel.send(":flag_" + euSpieler[i].country + ": **Username: " + euSpieler[i].userName + "**" + " `Score: " + euSpieler[i].score + "` __Wins : " + euSpieler[i].gewonnenP + " %__ **" + euSpieler[i].rank + "**");
                         }
                     }
                     message.author.warteZeit = 60;
@@ -345,9 +381,9 @@ bot.on("message", (message) => {
                 console.log(message.author.username);
                     for(i=0;i<euSpieler.length;i++){
                         if(i < 1){
-                            message.channel.send(":crown: :flag_" + euSpieler[i].country + ":  **Username: " + euSpieler[i].userName + "**" + " `Score: " + euSpieler[i].score + "` __Wins : " + euSpieler[i].gewonnenP + " %__");
+                            message.channel.send(":crown: :flag_" + euSpieler[i].country + ":  **Username: " + euSpieler[i].userName + "**" + " `Score: " + euSpieler[i].score + "` __Wins : " + euSpieler[i].gewonnenP + " %__ **" + euSpieler[i].rank + "**");
                         }else{
-                            message.channel.send(":flag_" + euSpieler[i].country + ": **Username: " + euSpieler[i].userName + "**" + " `Score: " + euSpieler[i].score + "` __Wins : " + euSpieler[i].gewonnenP + " %__");
+                            message.channel.send(":flag_" + euSpieler[i].country + ": **Username: " + euSpieler[i].userName + "**" + " `Score: " + euSpieler[i].score + "` __Wins : " + euSpieler[i].gewonnenP + " %__ **" + euSpieler[i].rank + "**");
                         }
                     }
                 
