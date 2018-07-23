@@ -316,6 +316,8 @@ bot.on("message", (message) => {
 
     switch(args[0]){
         case "online":
+            if(message.guild === null) return;
+            console.log(message.author.username);
             for(i=0;i<euSpieler.length;i++){
                 if(i < 1){
                     message.channel.send(":crown-1: Username: `" + euSpieler[i].userName + "`" + " Score: `" + euSpieler[i].score + "` Wins % : `" + euSpieler[i].gewonnenP + "`");
