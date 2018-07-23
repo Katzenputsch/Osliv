@@ -317,13 +317,11 @@ bot.on("message", (message) => {
     switch(args[0]){
         case "online":
             for(i=0;i<euSpieler.length;i++){
-                setTimeout(function(){
-                    if(i < 1){
+                if(i < 1){
                     message.channel.send(":crown-1: Username: `" + euSpieler[i].userName + "`" + " Score: `" + euSpieler[i].score + "` Wins % : `" + euSpieler[i].gewonnenP + "`");
                 }else{
                     message.channel.send("Username: `" + euSpieler[i].userName + "`" + " Score: `" + euSpieler[i].score + "` Wins % : `" + euSpieler[i].gewonnenP + "`");
                 }
-                }, 200);
             }
         break;
         case "lesen":
