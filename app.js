@@ -318,14 +318,59 @@ bot.on("message", (message) => {
     switch(args[0]){
         case "online":
             if(message.guild === null) return;
-            console.log(message.author.username);
-            for(i=0;i<euSpieler.length;i++){
-                if(i < 1){
-                    message.channel.send(":crown: :flag_" + euSpieler[i].country + ":  Username: `" + euSpieler[i].userName + "`" + " Score: `" + euSpieler[i].score + "` Wins % : `" + euSpieler[i].gewonnenP + "`");
+            
+            if(message.author.warteZeit){
+                if(message.author.warteZeit > 0){
+                    message.reply("cooldown: **" + message.author.warteZeit + "** second/s remaining");
                 }else{
-                    message.channel.send(":flag_" + euSpieler[i].country + ": Username: `" + euSpieler[i].userName + "`" + " Score: `" + euSpieler[i].score + "` Wins % : `" + euSpieler[i].gewonnenP + "`");
+                    console.log(message.author.username);
+                    for(i=0;i<euSpieler.length;i++){
+                        if(i < 1){
+                            message.channel.send(":crown: :flag_" + euSpieler[i].country + ":  Username: `" + euSpieler[i].userName + "`" + " Score: `" + euSpieler[i].score + "` Wins % : `" + euSpieler[i].gewonnenP + "`");
+                        }else{
+                            message.channel.send(":flag_" + euSpieler[i].country + ": Username: `" + euSpieler[i].userName + "`" + " Score: `" + euSpieler[i].score + "` Wins % : `" + euSpieler[i].gewonnenP + "`");
+                        }
+                    }
+                    message.author.warteZeit = 60;
+                    message.author[warteInter] = new setInterval(function(){
+                        if(message.author.warteZeit > 0){
+                         message.author.warteZeit -= 1;   
+                        }else{
+                         clearInterval(message.author.warteInter);   
+                        }
+                    }, 1000);
                 }
+            }else{
+                
+                console.log(message.author.username);
+                    for(i=0;i<euSpieler.length;i++){
+                        if(i < 1){
+                            message.channel.send(":crown: :flag_" + euSpieler[i].country + ":  Username: `" + euSpieler[i].userName + "`" + " Score: `" + euSpieler[i].score + "` Wins % : `" + euSpieler[i].gewonnenP + "`");
+                        }else{
+                            message.channel.send(":flag_" + euSpieler[i].country + ": Username: `" + euSpieler[i].userName + "`" + " Score: `" + euSpieler[i].score + "` Wins % : `" + euSpieler[i].gewonnenP + "`");
+                        }
+                    }
+                
+                message.author[warteZeit] = 60;
+                
+                message.author[warteInter] = new setInterval(function(){
+                        if(message.author.warteZeit > 0){
+                         message.author.warteZeit -= 1;   
+                        }else{
+                         clearInterval(message.author.warteInter);   
+                        }
+                    }, 1000);
+                
             }
+            
+//             console.log(message.author.username);
+//             for(i=0;i<euSpieler.length;i++){
+//                 if(i < 1){
+//                     message.channel.send(":crown: :flag_" + euSpieler[i].country + ":  Username: `" + euSpieler[i].userName + "`" + " Score: `" + euSpieler[i].score + "` Wins % : `" + euSpieler[i].gewonnenP + "`");
+//                 }else{
+//                     message.channel.send(":flag_" + euSpieler[i].country + ": Username: `" + euSpieler[i].userName + "`" + " Score: `" + euSpieler[i].score + "` Wins % : `" + euSpieler[i].gewonnenP + "`");
+//                 }
+//             }
         break;
         case "lesen":
             message.reply(nachrichten);
