@@ -317,9 +317,9 @@ bot.on("message", (message) => {
             for(i=0;i<euSpieler.length;i++){
                 setTimeout(function(){
                     if(i=0){
-                        message.channel.sendMessage(":crown-1: **Username:** `" + euSpieler[i].userName + "´" + " **Score:** `" + euSpieler[i].score + "` **Wins %:** " + gewonnenP);
+                        message.channel.sendMessage(":crown-1: **Username:** `" + euSpieler[i].userName + "´" + " **Score:** `" + euSpieler[i].score + "` **Wins %:** " + euSpieler[i].gewonnenP);
                     }else{
-                        message.channel.sendMessage("**Username:** `" + euSpieler[i].userName + "´" + " **Score:** `" + euSpieler[i].score + "` **Wins %:** " + gewonnenP);
+                        message.channel.sendMessage("**Username:** `" + euSpieler[i].userName + "´" + " **Score:** `" + euSpieler[i].score + "` **Wins %:** " + euSpieler[i].gewonnenP);
                     }
                 }, 300);
             }
