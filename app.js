@@ -138,7 +138,8 @@ function dingsbums(){
             matchesWon: euServer.players[i].matchesWon,
             matchesLost: euServer.players[i].matchesLost,
             draws: euServer.players[i].draws,
-            score: euServer.players[i].score
+            score: euServer.players[i].score,
+            gewonnenP: = Math.round((euServer.players[i].matchesWon/euServer.players[i].matches)*100);
         }
         euSpieler.push(player);
     }
@@ -314,17 +315,13 @@ bot.on("message", (message) => {
     switch(args[0]){
         case "online":
             for(i=0;i<euSpieler.length;i++){
-                var gewonnen = euSpieler[i].matchesWon;
-                var verloren = euSpieler[i].matchesLost;
-                var unentschieden = euSpieler[i].draws;
-                var alle = gewonnen + verloren + unentschieden;
-                var gewonnenP = Math.round((gewonnen/alle)*100);
-                
-                if(i=0){
-                    message.channel.sendMessage(":crown-1: **Username:** `" + euSpieler[i].userName + "´" + " **Score:** `" + euSpieler[i].score + "` **Wins %:** " + gewonnenP);
-                }else{
-                    message.channel.sendMessage("**Username:** `" + euSpieler[i].userName + "´" + " **Score:** `" + euSpieler[i].score + "` **Wins %:** " + gewonnenP);
-                }
+                setTimeout(function(){
+                    if(i=0){
+                        message.channel.sendMessage(":crown-1: **Username:** `" + euSpieler[i].userName + "´" + " **Score:** `" + euSpieler[i].score + "` **Wins %:** " + gewonnenP);
+                    }else{
+                        message.channel.sendMessage("**Username:** `" + euSpieler[i].userName + "´" + " **Score:** `" + euSpieler[i].score + "` **Wins %:** " + gewonnenP);
+                    }
+                }, 300);
             }
         break;
         case "lesen":
