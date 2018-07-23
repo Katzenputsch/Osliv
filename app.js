@@ -143,11 +143,12 @@ function dingsbums(){
         }
         euSpieler.push(player);
     }
-    console.log(euSpieler);
+    
     
     aveg = (gesamt/wieviele);
     avegINT = Math.round(aveg);
     euSpieler.sort(compare);
+    console.log(euSpieler);
 }
 
 //function durchschnittspunkte(){
