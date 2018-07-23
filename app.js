@@ -120,11 +120,6 @@ var parseHtml = function(html){
     
     gesamtSpieler = euServer.playerNum;
     
-    for(i=0;i<euServer.players.length;i++){
-        euSpieler.push(euServer.players[i]);
-    }
-    
-    euSpieler.sort(compare);
 }
 
 var avegINT = 0;
@@ -137,10 +132,12 @@ function dingsbums(){
     for(i=0;i<euServer.players.length;i++){
         gesamt += euServer.players[i].score;
         wieviele += 1;
+        euSpieler.push(euServer.players[i]);
     }
     
     aveg = (gesamt/wieviele);
     avegINT = Math.round(aveg);
+    euSpieler.sort(compare);
 }
 
 //function durchschnittspunkte(){
