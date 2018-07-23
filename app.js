@@ -132,7 +132,15 @@ function dingsbums(){
     for(i=0;i<euServer.players.length;i++){
         gesamt += euServer.players[i].score;
         wieviele += 1;
-        euSpieler.push(euServer.players[i]);
+        
+        let player = {
+            userName: euServer.players[i].userName,
+            matchesWon: euServer.players[i].matchesWon,
+            matchesLost: euServer.players[i].matchesLost,
+            draws: euServer.players[i].draws,
+            score: euServer.players[i].score
+        }
+        euSpieler.push(player);
     }
     
     aveg = (gesamt/wieviele);
