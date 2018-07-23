@@ -326,9 +326,9 @@ bot.on("message", (message) => {
                     console.log(message.author.username);
                     for(i=0;i<euSpieler.length;i++){
                         if(i < 1){
-                            message.channel.send(":crown: :flag_" + euSpieler[i].country + ":  Username: `" + euSpieler[i].userName + "`" + " Score: `" + euSpieler[i].score + "` Wins % : `" + euSpieler[i].gewonnenP + "`");
+                            message.channel.send(":crown: :flag_" + euSpieler[i].country + ":  **Username: " + euSpieler[i].userName + "**" + " `Score: " + euSpieler[i].score + "` __Wins : " + euSpieler[i].gewonnenP + " %__");
                         }else{
-                            message.channel.send(":flag_" + euSpieler[i].country + ": Username: `" + euSpieler[i].userName + "`" + " Score: `" + euSpieler[i].score + "` Wins % : `" + euSpieler[i].gewonnenP + "`");
+                            message.channel.send(":flag_" + euSpieler[i].country + ": **Username: " + euSpieler[i].userName + "**" + " `Score: " + euSpieler[i].score + "` __Wins : " + euSpieler[i].gewonnenP + " %__");
                         }
                     }
                     message.author.warteZeit = 60;
