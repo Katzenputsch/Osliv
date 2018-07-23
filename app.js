@@ -14,6 +14,7 @@ var suchende = [];
 var suchSpieler = [];
 var nachrichten = [];
 var gesamtSpieler = 0;
+var euSpieler = [];
 
 //var five = require("johnny-five");
 
@@ -100,6 +101,9 @@ setInterval(function(){
 var cooldown = 0;
 
 var parseHtml = function(html){
+    
+    euSpieler = [];
+    
     obj = JSON.parse(html);
 
     euServer = obj.servers[0];
@@ -115,6 +119,12 @@ var parseHtml = function(html){
     dingsbums();
     
     gesamtSpieler = euServer.playerNum;
+    
+    for(i=0;i<euServer.players.length;i++){
+        euSpieler.push(euServer.players[i]);
+    }
+    
+    euSpieler.sort(compare);
 }
 
 var avegINT = 0;
@@ -273,6 +283,14 @@ function checkForSusp(){
     // }
 }
 
+function compare(a,b) {
+    if (a.score > b.score)
+    return -1;
+    if (a.score < b.score)
+    return 1;
+    return 0;
+  }
+
 bot.on("message", (message) => {
     if(message.channel.id == "310892763417673729"){
         nachrichten.push(message.author.username + " | " + message.content);
@@ -289,6 +307,21 @@ bot.on("message", (message) => {
     });
 
     switch(args[0]){
+        case "online":
+            for(i=0;i<euSpieler.length;i++){
+                var gewonnen = euSpieler[i].matchesWon;
+                var verloren = euSpieler[i].matchesLost;
+                var unentschieden = euSpieler[i].draws;
+                var alle = gewonnen + verloren + unentschieden;
+                var gewonnenP = Math.round((gewonnen/alle)*100);
+                
+                if(i=0){
+                    message.channel.sendMessage(":crown-1: **Username:** `" + euSpieler[i].userName + "´" + " **Score:** `" + euSpieler[i].score + "` **Wins %:** " + gewonnenP);
+                }else{
+                    message.channel.sendMessage("**Username:** `" + euSpieler[i].userName + "´" + " **Score:** `" + euSpieler[i].score + "` **Wins %:** " + gewonnenP);
+                }
+            }
+        break;
         case "lesen":
             message.reply(nachrichten);
         break;
