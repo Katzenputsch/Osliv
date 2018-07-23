@@ -332,7 +332,7 @@ bot.on("message", (message) => {
                         }
                     }
                     message.author.warteZeit = 60;
-                    message.author[warteInter] = new setInterval(function(){
+                    message.author["warteInter"] = new setInterval(function(){
                         if(message.author.warteZeit > 0){
                          message.author.warteZeit -= 1;   
                         }else{
@@ -351,9 +351,9 @@ bot.on("message", (message) => {
                         }
                     }
                 
-                message.author[warteZeit] = 60;
+                message.author["warteZeit"] = 60;
                 
-                message.author[warteInter] = new setInterval(function(){
+                message.author["warteInter"] = new setInterval(function(){
                         if(message.author.warteZeit > 0){
                          message.author.warteZeit -= 1;   
                         }else{
