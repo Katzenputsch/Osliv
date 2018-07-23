@@ -139,7 +139,8 @@ function dingsbums(){
             matchesLost: euServer.players[i].matchesLost,
             draws: euServer.players[i].draws,
             score: euServer.players[i].score,
-            gewonnenP: Math.round((euServer.players[i].matchesWon/euServer.players[i].matches)*100)
+            gewonnenP: Math.round((euServer.players[i].matchesWon/euServer.players[i].matches)*100),
+            country: euServer.players[i].country
         }
         euSpieler.push(player);
     }
@@ -320,9 +321,9 @@ bot.on("message", (message) => {
             console.log(message.author.username);
             for(i=0;i<euSpieler.length;i++){
                 if(i < 1){
-                    message.channel.send(":crown-1: Username: `" + euSpieler[i].userName + "`" + " Score: `" + euSpieler[i].score + "` Wins % : `" + euSpieler[i].gewonnenP + "`");
+                    message.channel.send(":crown-1: :flag_" + euSpieler[i].country + ":" + Username: `" + euSpieler[i].userName + "`" + " Score: `" + euSpieler[i].score + "` Wins % : `" + euSpieler[i].gewonnenP + "`");
                 }else{
-                    message.channel.send("Username: `" + euSpieler[i].userName + "`" + " Score: `" + euSpieler[i].score + "` Wins % : `" + euSpieler[i].gewonnenP + "`");
+                    message.channel.send(":flag_" + euSpieler[i].country + ": Username: `" + euSpieler[i].userName + "`" + " Score: `" + euSpieler[i].score + "` Wins % : `" + euSpieler[i].gewonnenP + "`");
                 }
             }
         break;
