@@ -14,6 +14,7 @@ var suchende = [];
 var suchSpieler = [];
 var nachrichten = [];
 var gesamtSpieler = 0;
+var euSpielerNeu = [];
 var euSpieler = [];
 
 //var five = require("johnny-five");
@@ -102,7 +103,7 @@ var cooldown = 0;
 
 var parseHtml = function(html){
     
-    euSpieler = [];
+    euSpielerNeu = [];
     
     obj = JSON.parse(html);
 
@@ -178,13 +179,13 @@ function dingsbums(){
             country: euServer.players[i].country,
             rank: welcherRank(euServer.players[i].rank)
         }
-        euSpieler.push(player);
+        euSpielerNeu.push(player);
     }
     
     
     aveg = (gesamt/wieviele);
     avegINT = Math.round(aveg);
-    euSpieler.sort(compare);
+    euSpielerNeu.sort(compare);
 //     console.log(euSpieler);
 }
 
@@ -359,6 +360,7 @@ bot.on("message", (message) => {
                 if(message.author.warteZeit > 0){
                     message.reply("cooldown: **" + message.author.warteZeit + "** second/s remaining");
                 }else{
+                    euSpieler = euSpielerNeu;
                     console.log(message.author.username);
                     for(i=0;i<euSpieler.length;i++){
                         if(i < 1){
@@ -382,7 +384,7 @@ bot.on("message", (message) => {
                     }, 1000);
                 }
             }else{
-                
+                euSpieler = euSpielerNeu;
                 console.log(message.author.username);
                     for(i=0;i<euSpieler.length;i++){
                         if(i < 1){
