@@ -369,7 +369,7 @@ bot.on("message", (message) => {
                                message.channel.send(":flag_" + euSpieler[i].country + " **" + euSpieler[i].userName +  "**```" + "Rank: " + euSpieler[i].rank + "\n"  + "Score: " + euSpieler[i].score + "\n" + "Wins in %: " + euSpieler[i].gewonnenP + " %```");
                         }
                     }
-                    message.author.warteZeit = 60;
+                    message.author.warteZeit = 120;
                     message.author["warteInter"] = new setInterval(function(){
                         if(message.author.warteZeit > 0){
                          message.author.warteZeit -= 1;   
@@ -391,7 +391,7 @@ bot.on("message", (message) => {
                         }
                     }
                 
-                message.author["warteZeit"] = 60;
+                message.author["warteZeit"] = 120;
                 
                 message.author["warteInter"] = new setInterval(function(){
                         if(message.author.warteZeit > 0){
