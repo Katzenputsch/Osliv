@@ -360,19 +360,18 @@ bot.on("message", (message) => {
                     message.reply("cooldown: **" + message.author.warteZeit + "** second/s remaining");
                 }else{
                     console.log(message.author.username);
-                    for(i=0;i<euSpieler.length +1;i++){
+                    for(i=0;i<euSpieler.length;i++){
                         if(i < 1){
 //                             message.channel.send(":crown: :flag_" + euSpieler[i].country + ":  **Username: " + euSpieler[i].userName + "**" + " `Score: " + euSpieler[i].score + "` __Wins : " + euSpieler[i].gewonnenP + " %__ **" + euSpieler[i].rank + "**");
 //                                message.channel.send(":dark_sunglasses: :flag_" + euSpieler[i].country + ": **" + euSpieler[i].userName +  "**```" + "Rank: " + euSpieler[i].rank + "\n"  + "Score: " + euSpieler[i].score + "\n" + "Wins in %: " + euSpieler[i].gewonnenP + " %```");
                                message.channel.send("`" + i + "` :blobcoolthonk: :flag_" + euSpieler[i].country + ": **" + euSpieler[i].userName + "**");
-                        }else if(i > euSpieler.length){
-                                 message.channel.send("`write >info <number of player> for more info about the player`");
-                               }else{
+                        }else{
 //                             message.channel.send(":flag_" + euSpieler[i].country + ": **Username: " + euSpieler[i].userName + "**" + " `Score: " + euSpieler[i].score + "` __Wins : " + euSpieler[i].gewonnenP + " %__ **" + euSpieler[i].rank + "**");
 //                                message.channel.send(":flag_" + euSpieler[i].country + ": **" + euSpieler[i].userName +  "**```" + "Rank: " + euSpieler[i].rank + "\n"  + "Score: " + euSpieler[i].score + "\n" + "Wins in %: " + euSpieler[i].gewonnenP + " %```");
                                message.channel.send("`" + i + "` :flag_" + euSpieler[i].country + ": **" + euSpieler[i].userName + "**");
                         }
                     }
+                    message.channel.send("`write >info <number of player> for more info about the player`");
                     message.author.warteZeit = 120;
                     message.author["warteInter"] = new setInterval(function(){
                         if(message.author.warteZeit > 0){
@@ -385,19 +384,18 @@ bot.on("message", (message) => {
             }else{
                 
                 console.log(message.author.username);
-                    for(i=0;i<euSpieler.length +1;i++){
+                    for(i=0;i<euSpieler.length;i++){
                         if(i < 1){
 //                             message.channel.send(":crown: :flag_" + euSpieler[i].country + ":  **Username: " + euSpieler[i].userName + "**" + " `Score: " + euSpieler[i].score + "` __Wins : " + euSpieler[i].gewonnenP + " %__ **" + euSpieler[i].rank + "**");
 //                                message.channel.send(":dark_sunglasses: :flag_" + euSpieler[i].country + ": **" + euSpieler[i].userName +  "**```" + "Rank: " + euSpieler[i].rank + "\n"  + "Score: " + euSpieler[i].score + "\n" + "Wins in %: " + euSpieler[i].gewonnenP + " %```");
                                message.channel.send("`" + i + "` :blobcoolthonk: :flag_" + euSpieler[i].country + ": **" + euSpieler[i].userName + "**");
-                        }else if(i > euSpieler.length){
-                                 message.channel.send("`write >info <number of player> for more info about the player`");
-                               }else{
+                        }else{
 //                             message.channel.send(":flag_" + euSpieler[i].country + ": **Username: " + euSpieler[i].userName + "**" + " `Score: " + euSpieler[i].score + "` __Wins : " + euSpieler[i].gewonnenP + " %__ **" + euSpieler[i].rank + "**");
 //                                message.channel.send(":flag_" + euSpieler[i].country + ": **" + euSpieler[i].userName +  "**```" + "Rank: " + euSpieler[i].rank + "\n"  + "Score: " + euSpieler[i].score + "\n" + "Wins in %: " + euSpieler[i].gewonnenP + " %```");
                                message.channel.send("`" + i + "` :flag_" + euSpieler[i].country + ": **" + euSpieler[i].userName + "**");
                         }
                     }
+                    message.channel.send("`write >info <number of player> for more info about the player`");
                 
                 message.author["warteZeit"] = 120;
                 
