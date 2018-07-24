@@ -354,7 +354,7 @@ bot.on("message", (message) => {
 
     switch(args[0]){
         case "year":
-            request('http://numbersapi.com/random/year', { json: true }, (err, res, body) => {
+            request('http://numbersapi.com/#random/year', { json: true }, (err, res, body) => {
             if (err) { return console.log(err); }
                 console.log(body.url);
                 console.log(body.explanation);
