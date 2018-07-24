@@ -360,13 +360,17 @@ bot.on("message", (message) => {
                     message.reply("cooldown: **" + message.author.warteZeit + "** second/s remaining");
                 }else{
                     console.log(message.author.username);
-                    for(i=0;i<euSpieler.length;i++){
+                    for(i=0;i<euSpieler.length +1;i++){
                         if(i < 1){
 //                             message.channel.send(":crown: :flag_" + euSpieler[i].country + ":  **Username: " + euSpieler[i].userName + "**" + " `Score: " + euSpieler[i].score + "` __Wins : " + euSpieler[i].gewonnenP + " %__ **" + euSpieler[i].rank + "**");
-                               message.channel.send(":dark_sunglasses: :flag_" + euSpieler[i].country + ": **" + euSpieler[i].userName +  "**```" + "Rank: " + euSpieler[i].rank + "\n"  + "Score: " + euSpieler[i].score + "\n" + "Wins in %: " + euSpieler[i].gewonnenP + " %```");
-                        }else{
+//                                message.channel.send(":dark_sunglasses: :flag_" + euSpieler[i].country + ": **" + euSpieler[i].userName +  "**```" + "Rank: " + euSpieler[i].rank + "\n"  + "Score: " + euSpieler[i].score + "\n" + "Wins in %: " + euSpieler[i].gewonnenP + " %```");
+                               message.channel.send("`" + i + "` :blobcoolthonk: :flag_" + euSpieler[i].country + ": **" + euSpieler[i].userName + "**");
+                        }else if(i > euSpieler.length){
+                                 message.channel.send("`write >info <number of player> for more info about the player`");
+                               }else{
 //                             message.channel.send(":flag_" + euSpieler[i].country + ": **Username: " + euSpieler[i].userName + "**" + " `Score: " + euSpieler[i].score + "` __Wins : " + euSpieler[i].gewonnenP + " %__ **" + euSpieler[i].rank + "**");
-                               message.channel.send(":flag_" + euSpieler[i].country + ": **" + euSpieler[i].userName +  "**```" + "Rank: " + euSpieler[i].rank + "\n"  + "Score: " + euSpieler[i].score + "\n" + "Wins in %: " + euSpieler[i].gewonnenP + " %```");
+//                                message.channel.send(":flag_" + euSpieler[i].country + ": **" + euSpieler[i].userName +  "**```" + "Rank: " + euSpieler[i].rank + "\n"  + "Score: " + euSpieler[i].score + "\n" + "Wins in %: " + euSpieler[i].gewonnenP + " %```");
+                               message.channel.send("`" + i + "` :flag_" + euSpieler[i].country + ": **" + euSpieler[i].userName + "**");
                         }
                     }
                     message.author.warteZeit = 120;
@@ -381,13 +385,17 @@ bot.on("message", (message) => {
             }else{
                 
                 console.log(message.author.username);
-                    for(i=0;i<euSpieler.length;i++){
+                    for(i=0;i<euSpieler.length +1;i++){
                         if(i < 1){
 //                             message.channel.send(":crown: :flag_" + euSpieler[i].country + ":  **Username: " + euSpieler[i].userName + "**" + " `Score: " + euSpieler[i].score + "` __Wins : " + euSpieler[i].gewonnenP + " %__ **" + euSpieler[i].rank + "**");
-                               message.channel.send(":dark_sunglasses: :flag_" + euSpieler[i].country + ": **" + euSpieler[i].userName +  "**```" + "Rank: " + euSpieler[i].rank + "\n"  + "Score: " + euSpieler[i].score + "\n" + "Wins in %: " + euSpieler[i].gewonnenP + " %```");
-                        }else{
+//                                message.channel.send(":dark_sunglasses: :flag_" + euSpieler[i].country + ": **" + euSpieler[i].userName +  "**```" + "Rank: " + euSpieler[i].rank + "\n"  + "Score: " + euSpieler[i].score + "\n" + "Wins in %: " + euSpieler[i].gewonnenP + " %```");
+                               message.channel.send("`" + i + "` :blobcoolthonk: :flag_" + euSpieler[i].country + ": **" + euSpieler[i].userName + "**");
+                        }else if(i > euSpieler.length){
+                                 message.channel.send("`write >info <number of player> for more info about the player`");
+                               }else{
 //                             message.channel.send(":flag_" + euSpieler[i].country + ": **Username: " + euSpieler[i].userName + "**" + " `Score: " + euSpieler[i].score + "` __Wins : " + euSpieler[i].gewonnenP + " %__ **" + euSpieler[i].rank + "**");
-                               message.channel.send(":flag_" + euSpieler[i].country + ": **" + euSpieler[i].userName +  "**```" + "Rank: " + euSpieler[i].rank + "\n"  + "Score: " + euSpieler[i].score + "\n" + "Wins in %: " + euSpieler[i].gewonnenP + " %```");
+//                                message.channel.send(":flag_" + euSpieler[i].country + ": **" + euSpieler[i].userName +  "**```" + "Rank: " + euSpieler[i].rank + "\n"  + "Score: " + euSpieler[i].score + "\n" + "Wins in %: " + euSpieler[i].gewonnenP + " %```");
+                               message.channel.send("`" + i + "` :flag_" + euSpieler[i].country + ": **" + euSpieler[i].userName + "**");
                         }
                     }
                 
@@ -411,6 +419,19 @@ bot.on("message", (message) => {
 //                     message.channel.send(":flag_" + euSpieler[i].country + ": Username: `" + euSpieler[i].userName + "`" + " Score: `" + euSpieler[i].score + "` Wins % : `" + euSpieler[i].gewonnenP + "`");
 //                 }
 //             }
+        break;
+        case "info":
+            if(args[1]){
+                if(isNaN(args[1])){
+                    message.channel.send("correct use: `write >info <number of player> for more info about the player`"); 
+                }else if(!euSpieler[args[1]]){
+                 message.channel.send("correct use: `write >info <number of player> for more info about the player`");    
+                }else{
+                    message.channel.send(":dark_sunglasses: :flag_" + euSpieler[args[1]].country + ": **" + euSpieler[args[1]].userName +  "**```" + "Rank: " + euSpieler[args[1]].rank + "\n"  + "Score: " + euSpieler[args[1]].score + "\n" + "Wins in %: " + euSpieler[args[1]].gewonnenP + " %```");
+                }
+            }else{
+             message.channel.send("correct use: `write >info <number of player> for more info about the player`"); 
+            }
         break;
         case "lesen":
             message.reply(nachrichten);
