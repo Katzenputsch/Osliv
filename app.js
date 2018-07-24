@@ -447,6 +447,9 @@ bot.on("message", (message) => {
             }
             bot.channels.get('310892763417673729').sendMessage(nachricht);
         break;
+        case "offline":
+            message.channel.send("https://media2.giphy.com/media/5nj4KLBy2mhkH1pUWT/giphy.gif");
+        break;
         case "hier":
         if(message.author.id == "293718922371399681" || message.author.id == "311955689188753410"){
             derKanal = message.channel;
