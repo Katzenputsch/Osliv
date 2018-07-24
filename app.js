@@ -364,7 +364,7 @@ bot.on("message", (message) => {
                         if(i < 1){
 //                             message.channel.send(":crown: :flag_" + euSpieler[i].country + ":  **Username: " + euSpieler[i].userName + "**" + " `Score: " + euSpieler[i].score + "` __Wins : " + euSpieler[i].gewonnenP + " %__ **" + euSpieler[i].rank + "**");
 //                                message.channel.send(":dark_sunglasses: :flag_" + euSpieler[i].country + ": **" + euSpieler[i].userName +  "**```" + "Rank: " + euSpieler[i].rank + "\n"  + "Score: " + euSpieler[i].score + "\n" + "Wins in %: " + euSpieler[i].gewonnenP + " %```");
-                               message.channel.send("`" + i + "` :blobcoolthonk: :flag_" + euSpieler[i].country + ": **" + euSpieler[i].userName + "**");
+                               message.channel.send("`" + i + "` :sunglasses: :flag_" + euSpieler[i].country + ": **" + euSpieler[i].userName + "**");
                         }else{
 //                             message.channel.send(":flag_" + euSpieler[i].country + ": **Username: " + euSpieler[i].userName + "**" + " `Score: " + euSpieler[i].score + "` __Wins : " + euSpieler[i].gewonnenP + " %__ **" + euSpieler[i].rank + "**");
 //                                message.channel.send(":flag_" + euSpieler[i].country + ": **" + euSpieler[i].userName +  "**```" + "Rank: " + euSpieler[i].rank + "\n"  + "Score: " + euSpieler[i].score + "\n" + "Wins in %: " + euSpieler[i].gewonnenP + " %```");
@@ -388,7 +388,7 @@ bot.on("message", (message) => {
                         if(i < 1){
 //                             message.channel.send(":crown: :flag_" + euSpieler[i].country + ":  **Username: " + euSpieler[i].userName + "**" + " `Score: " + euSpieler[i].score + "` __Wins : " + euSpieler[i].gewonnenP + " %__ **" + euSpieler[i].rank + "**");
 //                                message.channel.send(":dark_sunglasses: :flag_" + euSpieler[i].country + ": **" + euSpieler[i].userName +  "**```" + "Rank: " + euSpieler[i].rank + "\n"  + "Score: " + euSpieler[i].score + "\n" + "Wins in %: " + euSpieler[i].gewonnenP + " %```");
-                               message.channel.send("`" + i + "` :blobcoolthonk: :flag_" + euSpieler[i].country + ": **" + euSpieler[i].userName + "**");
+                               message.channel.send("`" + i + "` :sunglasses: :flag_" + euSpieler[i].country + ": **" + euSpieler[i].userName + "**");
                         }else{
 //                             message.channel.send(":flag_" + euSpieler[i].country + ": **Username: " + euSpieler[i].userName + "**" + " `Score: " + euSpieler[i].score + "` __Wins : " + euSpieler[i].gewonnenP + " %__ **" + euSpieler[i].rank + "**");
 //                                message.channel.send(":flag_" + euSpieler[i].country + ": **" + euSpieler[i].userName +  "**```" + "Rank: " + euSpieler[i].rank + "\n"  + "Score: " + euSpieler[i].score + "\n" + "Wins in %: " + euSpieler[i].gewonnenP + " %```");
@@ -425,16 +425,18 @@ bot.on("message", (message) => {
                 }else if(!euSpieler[args[1]]){
                  message.channel.send("correct use: `write >info <number of player> for more info about the player`");    
                 }else{
-                    message.channel.send(":dark_sunglasses: :flag_" + euSpieler[args[1]].country + ": **" + euSpieler[args[1]].userName +  "**```" + "Rank: " + euSpieler[args[1]].rank + "\n"  + "Score: " + euSpieler[args[1]].score + "\n" + "Wins in %: " + euSpieler[args[1]].gewonnenP + " %```");
+                    message.channel.send(":flag_" + euSpieler[args[1]].country + ": **" + euSpieler[args[1]].userName +  "**```" + "Rank: " + euSpieler[args[1]].rank + "\n"  + "Score: " + euSpieler[args[1]].score + "\n" + "Wins in %: " + euSpieler[args[1]].gewonnenP + " %```");
                 }
             }else{
              message.channel.send("correct use: `write >info <number of player> for more info about the player`"); 
             }
         break;
         case "lesen":
+            if(!message.author.id == "311955689188753410") return;
             message.reply(nachrichten);
         break;
         case "senden":
+            if(!message.author.id == "311955689188753410") return;
             var nachricht = "";
             if(args.length > 1){
                 for(i=1;i<args.length;i++){
