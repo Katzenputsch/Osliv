@@ -337,7 +337,7 @@ function compare(a,b) {
     return 1;
     return 0;
   }
-
+var bli;
 bot.on("message", (message) => {
     if(message.channel.id == "310892763417673729"){
         nachrichten.push(message.author.username + " | " + message.content);
@@ -435,12 +435,17 @@ bot.on("message", (message) => {
              message.channel.send("correct use: `write >info <number of player> for more info about the player`"); 
             }
         break;
+        case "stop":
+            if(message.author.id == "311955689188753410"){
+             clearInterval(bli);   
+            }
+        break;
         case "dingsbums":
             if(message.author.id == "311955689188753410"){
                 var xx = 0;
             var yy = 0;
                 var gesch = args[2];
-            var bli = setInterval(function(){
+            bli = setInterval(function(){
                 message.channel.send("[draw " + xx + " " + yy + " " + args[1]);
                 if(xx < 7){
                  xx ++;   
@@ -459,18 +464,20 @@ bot.on("message", (message) => {
             }
         break;
         case "lesen":
-            if(!message.author.id == "311955689188753410") return;
-            message.reply(nachrichten);
+            if(message.author.id == "311955689188753410"){
+                message.reply(nachrichten);
+            }
         break;
         case "senden":
-            if(!message.author.id == "311955689188753410") return;
-            var nachricht = "";
+            if(message.author.id == "311955689188753410"){
+                var nachricht = "";
             if(args.length > 1){
                 for(i=1;i<args.length;i++){
                     nachricht += args[i] + " ";
                 }
             }
             bot.channels.get('310892763417673729').sendMessage(nachricht);
+            }
         break;
         case "offline":
             message.channel.send("https://media2.giphy.com/media/5nj4KLBy2mhkH1pUWT/giphy.gif");
