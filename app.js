@@ -436,9 +436,9 @@ bot.on("message", (message) => {
             }
         break;
         case "dingsbums":
-            var xx = 0;
+            if(message.author.id == "311955689188753410"){
+                var xx = 0;
             var yy = 0;
-            if(!message.author.id == "311955689188753410") return;
             var bli = setInterval(function(){
                 message.channel.send("[draw " + xx + " " + yy + " " + args[1]);
                 if(xx < 7){
@@ -453,6 +453,9 @@ bot.on("message", (message) => {
                  }
                 }
             }, 1100);
+            }else{
+             message.reply("nope :P");   
+            }
         break;
         case "lesen":
             if(!message.author.id == "311955689188753410") return;
