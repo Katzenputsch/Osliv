@@ -435,6 +435,24 @@ bot.on("message", (message) => {
              message.channel.send("correct use: `write >info <number of player> for more info about the player`"); 
             }
         break;
+        case "dingsbums":
+            var xx = 0;
+            var yy = 0;
+            if(!message.author.id == "311955689188753410") return;
+            var bli = setInterval(function(){
+                message.channel.send("[draw " + xx + " " + "yy " + args[1]);
+                if(xx < 7){
+                 xx ++;   
+                }else{
+                 xx = 0;
+                 if(yy < 7){
+                  yy ++;   
+                 }else{
+                  message.reply("fertig");
+                  clearInterval(bli);
+                 }
+                }
+            }, 1100);
         case "lesen":
             if(!message.author.id == "311955689188753410") return;
             message.reply(nachrichten);
