@@ -440,7 +440,7 @@ bot.on("message", (message) => {
             var yy = 0;
             if(!message.author.id == "311955689188753410") return;
             var bli = setInterval(function(){
-                message.channel.send("[draw " + xx + " " + "yy " + args[1]);
+                message.channel.send("[draw " + xx + " " + yy + " " + args[1]);
                 if(xx < 7){
                  xx ++;   
                 }else{
@@ -453,6 +453,7 @@ bot.on("message", (message) => {
                  }
                 }
             }, 1100);
+        break;
         case "lesen":
             if(!message.author.id == "311955689188753410") return;
             message.reply(nachrichten);
