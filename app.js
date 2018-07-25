@@ -439,6 +439,7 @@ bot.on("message", (message) => {
             if(message.author.id == "311955689188753410"){
                 var xx = 0;
             var yy = 0;
+                var gesch = args[2];
             var bli = setInterval(function(){
                 message.channel.send("[draw " + xx + " " + yy + " " + args[1]);
                 if(xx < 7){
@@ -452,7 +453,7 @@ bot.on("message", (message) => {
                   clearInterval(bli);
                  }
                 }
-            }, 1100);
+            }, gesch);
             }else{
              message.reply("nope :P");   
             }
