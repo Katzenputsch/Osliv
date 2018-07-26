@@ -428,8 +428,8 @@ bot.on("message", (message) => {
                 }else if(!euSpieler[args[1]]){
                  message.channel.send("correct use: `write >info <number of player> for more info about the player`");    
                 }else{
-//                     message.channel.send(":flag_" + euSpieler[args[1]].country + ": **" + euSpieler[args[1]].userName +  "**```" + "Rank: " + euSpieler[args[1]].rank + "\n"  + "Score: " + euSpieler[args[1]].score + "\n" + "Wins in %: " + euSpieler[args[1]].gewonnenP + " %```");
-                       message.channel.send("[tb-me " + euSpieler[args[1]].guid);
+                    message.channel.send(":flag_" + euSpieler[args[1]].country + ": **" + euSpieler[args[1]].userName +  "**```" + "Rank: " + euSpieler[args[1]].rank + "\n"  + "Score: " + euSpieler[args[1]].score + "\n" + "Wins in %: " + euSpieler[args[1]].gewonnenP + " %```");
+//                        message.channel.send("[tb-me " + euSpieler[args[1]].guid);
                 }
             }else{
              message.channel.send("correct use: `write >info <number of player> for more info about the player`"); 
