@@ -377,10 +377,16 @@ bot.on("message", (message) => {
 //                             message.channel.send(":crown: :flag_" + euSpieler[i].country + ":  **Username: " + euSpieler[i].userName + "**" + " `Score: " + euSpieler[i].score + "` __Wins : " + euSpieler[i].gewonnenP + " %__ **" + euSpieler[i].rank + "**");
 //                                message.channel.send(":dark_sunglasses: :flag_" + euSpieler[i].country + ": **" + euSpieler[i].userName +  "**```" + "Rank: " + euSpieler[i].rank + "\n"  + "Score: " + euSpieler[i].score + "\n" + "Wins in %: " + euSpieler[i].gewonnenP + " %```");
                                message.channel.send("`" + i + "` :sunglasses: :flag_" + euSpieler[i].country + ": → **" + euSpieler[i].userName + "** → __" + euSpieler[i].rank + "__");
+                               if(euSpieler[i].guid=="5e6cc6ce-97e0-4804-af13-903988593883"){
+                                message.channel.send("Cheers :o :beers:");   
+                               }
                         }else{
 //                             message.channel.send(":flag_" + euSpieler[i].country + ": **Username: " + euSpieler[i].userName + "**" + " `Score: " + euSpieler[i].score + "` __Wins : " + euSpieler[i].gewonnenP + " %__ **" + euSpieler[i].rank + "**");
 //                                message.channel.send(":flag_" + euSpieler[i].country + ": **" + euSpieler[i].userName +  "**```" + "Rank: " + euSpieler[i].rank + "\n"  + "Score: " + euSpieler[i].score + "\n" + "Wins in %: " + euSpieler[i].gewonnenP + " %```");
                                message.channel.send("`" + i + "` :flag_" + euSpieler[i].country + ": → **" + euSpieler[i].userName + "** → __" + euSpieler[i].rank + "__");
+                               if(euSpieler[i].guid=="5e6cc6ce-97e0-4804-af13-903988593883"){
+                                message.channel.send("Cheers :o :beers:");   
+                               }
                         }
                     }
                     message.channel.send("`write >info <number of player> for more info about the player`");
@@ -402,10 +408,16 @@ bot.on("message", (message) => {
 //                             message.channel.send(":crown: :flag_" + euSpieler[i].country + ":  **Username: " + euSpieler[i].userName + "**" + " `Score: " + euSpieler[i].score + "` __Wins : " + euSpieler[i].gewonnenP + " %__ **" + euSpieler[i].rank + "**");
 //                                message.channel.send(":dark_sunglasses: :flag_" + euSpieler[i].country + ": **" + euSpieler[i].userName +  "**```" + "Rank: " + euSpieler[i].rank + "\n"  + "Score: " + euSpieler[i].score + "\n" + "Wins in %: " + euSpieler[i].gewonnenP + " %```");
                                message.channel.send("`" + i + "` :sunglasses: :flag_" + euSpieler[i].country + ": → **" + euSpieler[i].userName + "** → __" + euSpieler[i].rank + "__");
+                               if(euSpieler[i].guid=="5e6cc6ce-97e0-4804-af13-903988593883"){
+                                message.channel.send("Cheers :o :beers:");   
+                               }
                         }else{
 //                             message.channel.send(":flag_" + euSpieler[i].country + ": **Username: " + euSpieler[i].userName + "**" + " `Score: " + euSpieler[i].score + "` __Wins : " + euSpieler[i].gewonnenP + " %__ **" + euSpieler[i].rank + "**");
 //                                message.channel.send(":flag_" + euSpieler[i].country + ": **" + euSpieler[i].userName +  "**```" + "Rank: " + euSpieler[i].rank + "\n"  + "Score: " + euSpieler[i].score + "\n" + "Wins in %: " + euSpieler[i].gewonnenP + " %```");
                                message.channel.send("`" + i + "` :flag_" + euSpieler[i].country + ": → **" + euSpieler[i].userName + "** → __" + euSpieler[i].rank + "__");
+                               if(euSpieler[i].guid=="5e6cc6ce-97e0-4804-af13-903988593883"){
+                                message.channel.send("Cheers :o :beers:");   
+                               }
                         }
                     }
                     message.channel.send("`write >info <number of player> for more info about the player`");
