@@ -16,6 +16,8 @@ var nachrichten = [];
 var gesamtSpieler = 0;
 var euSpielerNeu = [];
 var euSpieler = [];
+var aktualisiertVor = 0;
+var seitTimer;
 
 //var five = require("johnny-five");
 
@@ -102,6 +104,12 @@ setInterval(function(){
 var cooldown = 0;
 
 var parseHtml = function(html){
+    
+    aktualisiertVor = 0;
+    clearInterval(seitTimer);
+    seitTimer = setInterval(function(){
+        aktualisiertVor ++;
+    }, 1000);
     
     euSpielerNeu = [];
     
@@ -363,6 +371,7 @@ bot.on("message", (message) => {
                 }else{
                     euSpieler = euSpielerNeu;
                     console.log(message.author.username);
+                    message.channel.send(":arrows_counterclockwise: Updated list **" + aktualisiertSeit + "** second/s ago!");
                     for(i=0;i<euSpieler.length;i++){
                         if(i < 1){
 //                             message.channel.send(":crown: :flag_" + euSpieler[i].country + ":  **Username: " + euSpieler[i].userName + "**" + " `Score: " + euSpieler[i].score + "` __Wins : " + euSpieler[i].gewonnenP + " %__ **" + euSpieler[i].rank + "**");
@@ -387,6 +396,7 @@ bot.on("message", (message) => {
             }else{
                 euSpieler = euSpielerNeu;
                 console.log(message.author.username);
+                    message.channel.send(":arrows_counterclockwise: Updated list **" + aktualisiertSeit + "** second/s ago!");
                     for(i=0;i<euSpieler.length;i++){
                         if(i < 1){
 //                             message.channel.send(":crown: :flag_" + euSpieler[i].country + ":  **Username: " + euSpieler[i].userName + "**" + " `Score: " + euSpieler[i].score + "` __Wins : " + euSpieler[i].gewonnenP + " %__ **" + euSpieler[i].rank + "**");
