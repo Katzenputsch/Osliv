@@ -27,9 +27,10 @@ bot.login(process.env.BOT_TOKEN);
 
 bot.on("ready", () => {
 //    durchschnittspunkte();
-    setInterval(function(){
-        bot.user.setActivity("EU: online: " + gesamtSpieler + "→ Ø score: " + avegINT);
-    }, 180000);
+//     setInterval(function(){
+//         bot.user.setActivity("EU: online: " + gesamtSpieler + "→ Ø score: " + avegINT);
+//     }, 180000);
+    bot.user.setActivity("https://seite.herokuapp.com/");
     derKanal = bot.channels.get("310892763417673729");
     derKanal.send("Bot crashed or was restarted. Suspicious matches might repeat, check _**Match ID's**_ to determine wether match was already reported here.");
     //derKanal2 = bot.channels.find("name","staff");
