@@ -164,7 +164,7 @@ function welcherRank(rank){
             return "World Class";
         break;
         case 10:
-            return "Elite";
+            return "Legend";
         break;
     }
 }
