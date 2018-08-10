@@ -373,7 +373,7 @@ bot.on("message", (message) => {
                     euSpieler = euSpielerNeu;
                     console.log(message.author.username);
                     message.channel.send(":arrows_counterclockwise: Updated list **" + aktualisiertVor + "** second/s ago.");
-                    message.channel.send(":star: **Barnsey**");
+                    message.channel.send(":star: **Barnsey** :heart: **Ruby**");
                     for(i=0;i<euSpieler.length;i++){
                         if(i < 1){
 //                             message.channel.send(":crown: :flag_" + euSpieler[i].country + ":  **Username: " + euSpieler[i].userName + "**" + " `Score: " + euSpieler[i].score + "` __Wins : " + euSpieler[i].gewonnenP + " %__ **" + euSpieler[i].rank + "**");
@@ -399,7 +399,7 @@ bot.on("message", (message) => {
                 euSpieler = euSpielerNeu;
                 console.log(message.author.username);
                     message.channel.send(":arrows_counterclockwise: Updated list **" + aktualisiertVor + "** second/s ago.");
-                    message.channel.send(":star: **Barnsey**");
+                    message.channel.send(":star: **Barnsey** :heart: **Ruby**");
                     for(i=0;i<euSpieler.length;i++){
                         if(i < 1){
 //                             message.channel.send(":crown: :flag_" + euSpieler[i].country + ":  **Username: " + euSpieler[i].userName + "**" + " `Score: " + euSpieler[i].score + "` __Wins : " + euSpieler[i].gewonnenP + " %__ **" + euSpieler[i].rank + "**");
