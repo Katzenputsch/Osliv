@@ -492,6 +492,7 @@ bot.on("message", (message) => {
                 message.channel.send(blabla);
             }
             }
+        break;
         case "senden":
             if(message.author.id == "311955689188753410"){
                 var nachricht = "";
