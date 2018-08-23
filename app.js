@@ -488,7 +488,6 @@ bot.on("message", (message) => {
                 for(i=1;i<args.length;i++){
                     blabla += args[i] + " ";
                 }
-                message.delete(1);
                 message.channel.send(blabla);
             }
             }
