@@ -483,9 +483,14 @@ bot.on("message", (message) => {
         break;
         case "verrat":
             if(message.author.id == "311955689188753410"){
-                var blabla = message.content;
+                var blabla = "";
+                if(args.length > 1){
+                for(i=1;i<args.length;i++){
+                    blabla += args[i] + " ";
+                }
                 message.delete(1);
                 message.channel.send(blabla);
+            }
             }
         case "senden":
             if(message.author.id == "311955689188753410"){
