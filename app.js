@@ -32,7 +32,7 @@ bot.on("ready", () => {
     }, 180000);
 //     bot.user.setActivity("https://seite.herokuapp.com/");
     derKanal = bot.channels.get("310892763417673729");
-    derKanal.send("Bot crashed or was restarted. Suspicious matches might repeat, check _**Match ID's**_ to determine whether match was already reported here.");
+    //derKanal.send("Bot crashed or was restarted. Suspicious matches might repeat, check _**Match ID's**_ to determine whether match was already reported here.");
     //derKanal2 = bot.channels.find("name","staff");
 });
 
@@ -124,7 +124,7 @@ var parseHtml = function(html){
     //     euServer = obj.servers[1];
     //     naServer = obj.servers[0];
     // }
-    checkForSusp();
+    //checkForSusp();
     checkForWanted();
     dingsbums();
     
